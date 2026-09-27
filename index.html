@@ -558,8 +558,18 @@ headerCells.forEach((headerCell, index) => {
           cell.dataset.status = "0";
 
           // CP명
-          cell.innerText =
-            rowMember.short + columnMember.short;
+          let cpName =
+  rowMember.short + columnMember.short;
+
+if (cpName === "런룆") {
+  cpName = "쉬룆";
+}
+
+if (cpName === "룆런") {
+  cpName = "룆쉬";
+}
+
+cell.innerText = cpName;
 
           // 클릭하면 해당 CP만 상태 변경
           cell.addEventListener("click", () => {
@@ -932,9 +942,19 @@ function redo() {
       const rowIndex = cell.parentElement.rowIndex - 1;
       const columnIndex = cell.cellIndex - 1;
 
-      cell.innerText =
-        members[rowIndex].short +
-        members[columnIndex].short;
+      let cpName =
+  members[rowIndex].short +
+  members[columnIndex].short;
+
+if (cpName === "런룆") {
+  cpName = "쉬룆";
+}
+
+if (cpName === "룆런") {
+  cpName = "룆쉬";
+}
+
+cell.innerText = cpName;
 
     });
 
